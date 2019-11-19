@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,66 +9,74 @@
     <script src="funciones.js" type="text/javascript"></script>
 
     <style type="text/css">
-    .error {
-        
-        color: red;
-        font-size: 18px;
+        .error {
 
-    }
-    
+            color: red;
+            font-size: 18px;
+
+        }
     </style>
 </head>
+
 <body>
 
     <form method="POST" action="login.php" id="formulario" onsubmit="return validarCamposObligatorios()">
 
         <label for="cedula">Cedula(*)</label>
 
-        <input type="text" id="cedula" name="cedula" placeholder="Ingrese el numero de cedula" maxlength="10"  required onblur="validarCedula();"/>
+        <input type="text" id="cedula" name="cedula" placeholder="Ingrese el numero de cedula" maxlength="10" required
+            onblur="validarCedula();" />
         <span id="mensajeCedula" class="error"></span>
         <br>
 
         <label for="nombres">Nombres(*)</label>
 
-        <input type="text" id="nombres" name="nombres" value=""  maxlength="50" placeholder="Ingrese sus dos nombres" onkeyup="return validarLetrasn(this);" required />
+        <input type="text" id="nombres" name="nombres" value="" maxlength="50" placeholder="Ingrese sus dos nombres"
+            onkeyup="return validarLetrasn(this);" required />
         <span id="mensajeNombres" class="error"></span>
         <br>
 
         <label for="apellidos">Apellidos(*)</label>
 
-        <input type="text" id="apellidos" name="apellidos" value="" maxlength="50" placeholder="Ingrese sus dos apellidos" onkeyup="return validarLetrasa(this);" required/>
+        <input type="text" id="apellidos" name="apellidos" value="" maxlength="50"
+            placeholder="Ingrese sus dos apellidos" onkeyup="return validarLetrasa(this);" required />
         <span id="mensajeApellidos" class="error"></span>
 
         <br>
 
         <label for="direccion">Direccion(*)</label>
 
-        <input type="text" id="direccion" name="direccion" value="" maxlength="75" placeholder="Ingrese su direccion" required/>
+        <input type="text" id="direccion" name="direccion" value="" maxlength="75" placeholder="Ingrese su direccion"
+            required />
 
         <br>
 
         <label for="telefono">Telefono(*)</label>
 
-        <input type="text" id="telefono" name="telefono" value="" maxlength="10" placeholder="Ingrese su telefono"  onkeyup="return validarnt(this);" required />
+        <input type="text" id="telefono" name="telefono" value="" maxlength="10" placeholder="Ingrese su telefono"
+            onkeyup="return validarnt(this);" required />
         <span id="mensajeT" class="error"></span>
         <br>
 
         <label for="fecha">Fecha de Nacimiento(*)</label>
 
-        <input type="date" id="fecha" name="fecha" value="" placeholder="Ingrese su Fecha de Nacimiento" required/>
-
+        <input type="date" id="fecha" name="fecha" value="" placeholder="Ingrese su Fecha de Nacimiento" required
+            onblur="return validarF();" />
+        <span id="mensajeFecha" class="error"></span>
         <br>
 
         <label for="correo">Correo Electronico(*)</label>
-     
-        <input type="text" id="correo" name="correo" value="" maxlength="25" placeholder="Ingrese su Correo" onblur="return validarCorreo(this);" required />
+
+        <input type="text" id="correo" name="correo" value="" maxlength="25" placeholder="Ingrese su Correo"
+            onblur="return validarCorreo(this);" required />
         <span id="mensajeC" class="error"></span>
         <br>
 
         <label for="password">Password(*)</label>
 
-        <input type="password" id="password" name="password" minlength="8" maxlength="255" value="" placeholder="Ingrese su Contraseña" onkeyup="return validarPass(this);" required />
-<span id="mensajeP" class="errorP"></span>
+        <input type="password" id="password" name="password" minlength="8" maxlength="255" value=""
+            placeholder="Ingrese su Contraseña" onkeyup="return validarPass(this);" required />
+        <span id="mensajeP" class="errorP"></span>
         <br>
 
 
@@ -76,6 +85,7 @@
 
 
     </form>
-    
+
 </body>
+
 </html>

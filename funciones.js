@@ -207,7 +207,69 @@ function validarCorreo() {
 		document.getElementById("mensajeC").innerHTML = "Verificar que contenga una @ y .";
 		
 	}
+	validarCorreoU()
 }
+
+function validarCorreoU(){
+	var cadena = document.getElementById('correo').value;
+
+
+	if (cadena.indexOf("@est.ups.edu.ec", 0) <0){
+		document.getElementById("mensajeC").innerHTML = 'Correo elctrononico incorrecto';
+		return false;
+	} 
+        else{
+		document.getElementById("mensajeC").innerHTML = 'Correo Electronico Valido';
+		return true;
+	}
+
+
+}
+
+function validarF(ExpiryDate) {
+    var objDate,  
+            mSeconds, 
+            day,  
+            month, 
+            year;      
+    if (ExpiryDate.length !== 10) {
+document.getElementById('mensajeFecha').innerHTML = 'Fecha Correcta';
+        return false;
+
+    }
+
+    if (ExpiryDate.substring(2, 3) !== '/' || ExpiryDate.substring(5, 6) !== '/') {
+        document.getElementById('mensajeFecha').innerHTML = 'Verificar 01';
+        return false;
+    }
+
+    month = ExpiryDate.substring(0, 2) - 1; // because months in JS start from 0 
+    day = ExpiryDate.substring(3, 5) - 0;
+    year = ExpiryDate.substring(6, 10) - 0;
+
+    if (year < 1000 || year > 3000) {
+        document.getElementById('mensajeFecha').innerHTML = 'Verificar 1';
+        return false;
+    }
+
+    mSeconds = (new Date(year, month, day)).getTime();
+
+    objDate = new Date();
+    objDate.setTime(mSeconds);
+
+    if (objDate.getFullYear() !== year ||
+            objDate.getMonth() !== month ||
+            objDate.getDate() !== day) {
+        document.getElementById('mensajeFecha').innerHTML = 'Verificar 1';
+        return false;
+    }
+    // otherwise return true 
+ document.getElementById('mensajeFecha').innerHTML = 'Verificar fecha';
+    fech = true;
+     document.getElementById('mensajeFecha').innerHTML = 'Verificar fecha111111';
+    return true;
+}
+
 
 function validarPass() {
 	var pass = document.getElementById("password").value.trim();
